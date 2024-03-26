@@ -1,8 +1,10 @@
 import streamlit as st
-import tensorflow as tf
+import tf_keras as keras
+import os 
 from PIL import Image
 import numpy as np
 import time 
+import os;os.environ["TF_USE_LEGACY_KERAS"]="1"
 
 card_names = {
     '2c': '2 of Clubs', '2d': '2 of Diamonds', '2h': '2 of Hearts', '2s': '2 of Spades',
@@ -21,7 +23,7 @@ card_names = {
 }
 # Load your TensorFlow model we want to do this from a URL as its too big for github 
 MODEL_PATH = 'models/model_to_use'
-model = tf.keras.models.load_model(MODEL_PATH)
+model = keras.models.load_model(MODEL_PATH)
 
 st.title('Image Classification App')
 uploaded_file = st.file_uploader("Upload the card you're thinking of...", type="jpg")
