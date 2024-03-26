@@ -2,8 +2,18 @@ import streamlit as st
 import tensorflow as tf
 from PIL import Image
 import numpy as np
+import requests
 
-# Load your TensorFlow model
+def download_model(url, save_path):
+    r = requests.get(url, stream=True)
+    if r.status_code == 200:
+        with open(save_path, 'wb') as f:
+            f.write(r.content)
+        print("Model downloaded successfully.")
+    else:
+        print("Failed to download the model.")
+
+# Load your TensorFlow model we want to do this from a URL as its too big for github 
 MODEL_PATH = 'models/model_3'
 model = tf.keras.models.load_model(MODEL_PATH)
 
