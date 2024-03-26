@@ -33,7 +33,7 @@ MODEL_PATH = 'models/model_to_use'
 model = keras.models.load_model(MODEL_PATH)
 
 st.title('2c or not 2c, that is the question')
-uploaded_file = st.file_uploader("Upload the card you're thinking of...", type="jpg")
+uploaded_file = st.file_uploader("Upload the card you're thinking of...", type=["jpg", "png"])
 
 if uploaded_file is not None:
     image_1 = Image.open(uploaded_file)
