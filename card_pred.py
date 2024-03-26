@@ -4,6 +4,19 @@ from PIL import Image
 import numpy as np
 import time 
 
+background_image_url = "https://hamnersunbelievable.com/wp-content/uploads/2023/05/Silhouette-of-magician-with-a-wand-1200x900.jpg"
+# CSS to inject contained in a multiline string
+background_style = """
+<style>
+body {{
+background-image: url(f"{background_image_url}");
+background-size: cover;
+}}
+</style>
+"""
+
+st.markdown(background_style, unsafe_allow_html=True)
+
 card_names = {
     '2c': '2 of Clubs', '2d': '2 of Diamonds', '2h': '2 of Hearts', '2s': '2 of Spades',
     '3c': '3 of Clubs', '3d': '3 of Diamonds', '3h': '3 of Hearts', '3s': '3 of Spades',
@@ -41,7 +54,7 @@ if uploaded_file is not None:
     # Make a prediction
     predictions = model.predict(image)
     predicted_class = np.argmax(predictions[0])
-    st.write(predicted_class)
+    #st.write(predicted_class)
     class_names = ['10c', '10d', '10h', '10s', '2c', '2d', '2h', '2s', '3c', '3d', '3h', '3s',
                     '4c', '4d', '4h', '4s', '5c', '5d', '5h', '5s', '6c', '6d', '6h', '6s',
                       '7c', '7d', '7h', '7s', '8c', '8d', '8h', '8s', '9c', '9d', '9h', '9s', 
