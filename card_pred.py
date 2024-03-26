@@ -6,6 +6,9 @@ import numpy as np
 import time 
 import os;os.environ["TF_USE_LEGACY_KERAS"]="1"
 
+st.set_page_config(page_title="Mind Reading",
+                   page_icon=":top_hat:",
+                   layout="centered")
 background_image_url = "https://hamnersunbelievable.com/wp-content/uploads/2023/05/Silhouette-of-magician-with-a-wand-1200x900.jpg"
 # CSS to inject contained in a multiline string
 background_style = """
