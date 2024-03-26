@@ -28,7 +28,7 @@ uploaded_file = st.file_uploader("Upload the card you're thinking of...", type="
 
 if uploaded_file is not None:
     image_1 = Image.open(uploaded_file)
-    #st.image(image_1, caption='Uploaded Image.', use_column_width=True)
+    st.image(image_1, caption='Uploaded Image.', use_column_width=True)
     image = Image.open(uploaded_file).resize((224, 224)).convert('RGB')
     
     st.write("")
