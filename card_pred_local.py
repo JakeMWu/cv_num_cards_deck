@@ -39,11 +39,10 @@ MODEL_PATH = 'models/model_to_use'
 model = tf.keras.models.load_model(MODEL_PATH)
 
 st.title('2c or not 2c, that is the question')
-uploaded_file = st.file_uploader("Upload the card you're thinking of...", type="jpg")
+uploaded_file = st.camera_input("Take a picture")
 
 if uploaded_file is not None:
     image_1 = Image.open(uploaded_file)
-    st.image(image_1, caption='Uploaded Image.', use_column_width=True)
     image = Image.open(uploaded_file).resize((224, 224)).convert('RGB')
     
     st.write("")
