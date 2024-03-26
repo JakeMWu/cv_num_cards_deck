@@ -38,7 +38,7 @@ card_names = {
 MODEL_PATH = 'models/model_to_use'
 model = keras.models.load_model(MODEL_PATH)
 
-st.title('Image Classification App')
+st.title('2c or not 2c, that is the question')
 uploaded_file = st.file_uploader("Upload the card you're thinking of...", type="jpg")
 
 if uploaded_file is not None:
@@ -62,7 +62,7 @@ if uploaded_file is not None:
                       '7c', '7d', '7h', '7s', '8c', '8d', '8h', '8s', '9c', '9d', '9h', '9s', 
                       'Ac', 'Ad', 'Ah', 'As', 'Jc', 'Jd', 'Jh', 'Js', 'Kc', 'Kd', 'Kh', 'Ks', 'Qc', 'Qd', 'Qh', 'Qs'] # Customize based on your classes
     #string = "This image most likely belongs to {class_names[predicted_class]} with a {:.2f} percent confidence."
-    time.sleep(3) # 5 seconds for dramatic effect 
+    time.sleep(1) # 5 seconds for dramatic effect 
     #st.write(string.format(class_names[predicted_class], 100 * np.max(predictions)))
     
     st.write(f"Is the {card_names[class_names[predicted_class]]}!!!!")
